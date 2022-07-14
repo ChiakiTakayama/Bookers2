@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-# サインインしたらユーザーページに飛ぶように
+# サインインしたらユーザーページに飛ぶようにする
   def after_sign_in_path_for(resource)
     about_path
   end
-
+# サインアウトしたらトップページに飛ぶようにする
   def after_sign_out_path_for(resource)
     about_path
   end
