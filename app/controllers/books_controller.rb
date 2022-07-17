@@ -18,7 +18,10 @@ def index
 end
 # 11章を元に記述。
 # strongパラメーターより先に記述しないとエラーが出る
-
+def show
+ @book = Book.find(params[:id])
+end
+# 11章でログイン後の遷移より先に12章を元に記述
  private
 
  def book_params

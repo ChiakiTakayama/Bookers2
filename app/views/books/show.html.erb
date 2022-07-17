@@ -1,0 +1,7 @@
+<div><!--12章で作成-->
+  <p>Title:<%= @book.title %></p>
+  <p>Opinion:<%= @book.body %></p>
+  <p>投稿ユーザー画像：<%=image_tag 'no_image.jpg' %></p>
+  <p>ユーザーネーム：<%= @book.user.name %></p>
+  <p>投稿日：<%= @book.created_at.strftime('%Y/%m/%d') %></p>
+</div>
