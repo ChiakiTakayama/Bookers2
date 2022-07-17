@@ -13,6 +13,11 @@ def create
     redirect_to books_path
 end
 # 10章を元に作成
+def index
+  @books = Book.all
+end
+# 11章を元に記述。
+# strongパラメーターより先に記述しないとエラーが出る
 
  private
 
@@ -21,4 +26,5 @@ end
  end
 
 # 10章を元に作成
+
 end

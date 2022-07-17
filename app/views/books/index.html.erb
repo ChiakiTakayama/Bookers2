@@ -1,0 +1,9 @@
+<% @books.each do |book| %>
+<div>
+  <!--< %= image_tag book.get_image %>-->
+  <p>投稿ユーザー画像：<%= image_tag 'no_image.jpeg' %></p>
+  <p>Title : <%= book.title %></p>
+  <p>Opinion : <%= book.body %></p>
+</div>
+<% end %>
+<!--11章を元に追加-->
