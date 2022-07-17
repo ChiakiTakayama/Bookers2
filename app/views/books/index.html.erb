@@ -1,6 +1,10 @@
 <% @books.each do |book| %>
 <div>
-  <!--< %= image_tag book.get_image %>-->
+  <%= link_to book_path(book.id) do %>
+  <p>Show</p>
+  <% end %>
+<!--12章で追加。-->
+  
   <p>投稿ユーザー画像：<%= image_tag 'no_image.jpeg' %></p>
   <p>Title : <%= book.title %></p>
   <p>Opinion : <%= book.body %></p>
