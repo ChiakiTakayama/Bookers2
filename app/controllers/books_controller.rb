@@ -22,6 +22,13 @@ def show
  @book = Book.find(params[:id])
 end
 # 11章でログイン後の遷移より先に12章を元に記述
+
+def destroy
+ @book = Book.find(params[:id])
+ @book.destroy
+ redirect_to '/books'
+end
+# 13章を元に記述
  private
 
  def book_params
