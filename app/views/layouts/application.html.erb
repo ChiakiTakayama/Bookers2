@@ -18,6 +18,10 @@
         </li>
         <!--10章を元に投稿フォームを作成-->
         <li>
+          <%= link_to 'マイページ', user_path(current_user.id) %>
+        </li>
+        <!--15章を元にマイページへのリンクを作成-->
+        <li>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>
       <% else %>
