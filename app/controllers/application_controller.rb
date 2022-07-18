@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     about_path
+    # users_path   books_pathにしてみたらうまく行ったのでもう少しユーザーページを見るべき
   end
 # サインアウトしたらトップページに飛ぶようにする
   def after_sign_out_path_for(resource)
