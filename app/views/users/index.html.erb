@@ -1,0 +1,9 @@
+<h1>ユーザー一覧</h1>
+<% @users.each do |user| %>
+<!--投稿フォームを部分テンプレートで作成-->
+<div>
+  <!--<p>投稿ユーザー画像：< %= image_tag 'no_image.jpeg' %></p>-->
+  <!--<p>Title：< %= book.title %></p>-->
+  <p>ユーザーネーム：<%= user.name %></p>
+  <% end %>
+</div>
