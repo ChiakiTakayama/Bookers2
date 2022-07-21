@@ -4,6 +4,7 @@
   <p>Show</p>
   <% end %>
 <!--12章で追加。-->
+<%= render 'new', books: @books %>
   
   <p>投稿ユーザー画像：<%= image_tag 'no_image.jpeg' %></p>
   <!--<p>投稿ユーザー画像：< %= image_tag @book.user.get_profile_image(100,100) %></p>-->
