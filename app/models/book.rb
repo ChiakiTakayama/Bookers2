@@ -2,6 +2,9 @@ class Book < ApplicationRecord
   # has_one_attached :image
   # 本の画像は投稿しないからいらない気がする
   belongs_to :user
+  validates :title, presence: true
+  validates :body, presence: true
+  validates :image, presence: true
   
 #   def get_image
     # if image.attached?
