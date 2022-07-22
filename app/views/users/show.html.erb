@@ -1,9 +1,10 @@
 <div>
   <!--投稿フォーム-->
   <%= render 'books/new', books: @books %>
-  <h3><%= @user.name %></h3>
+  <!--<h3>< %= @user.name %></h3>-->
+  <h2>ユーザーページ</h2>
   <%= image_tag @user.get_profile_image(100,100) %>
-  
+
   <% if @user.id == current_user.id %>
    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
   <!--編集画面へのリンクは16章が元になっている-->
@@ -13,12 +14,12 @@
 
 <% @books.each do |book| %>
 <div>
-  <%= link_to book_path(book.id) do %>
     <!--< %= image_tag book.get_image %>-->
     <!--↑上のimage_tag系いらない-->
-  <% end %>
   <p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) %></p>
+  <%= link_to book_path(book.id) do %>
   <p>Title：<%= book.title %></p>
+  <% end %>
   <p>Opinion：<%= book.body %></p>
   <!--<p>ユーザーネーム：< %= post_image.user.name %></p>-->
   <!--ユーザーネーム部分省いたら普通にルーティングおkだった-->

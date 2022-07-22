@@ -1,15 +1,17 @@
 <% @books.each do |book| %>
 <div>
-  <%= link_to book_path(book.id) do %>
-  <p>Show</p>
-  <% end %>
+
 <!--12章で追加。-->
+<!--<n%= render 'users/user-info', users: @users %>user infoの部分テンプレはエラー-->
 <%= render 'new', books: @books %>
-  
+<h2>投稿一覧</h2>
+
   <p>投稿ユーザー画像：<%= image_tag 'no_image.jpeg' %></p>
   <!--<p>投稿ユーザー画像：< %= image_tag @book.user.get_profile_image(100,100) %></p>-->
   <!--17章を元に変更しようとしたらshowの方でNameErrprが-->
+   <%= link_to book_path(book.id) do %>
   <p>Title : <%= book.title %></p>
+  <% end %>
   <p>Opinion : <%= book.body %></p>
 </div>
 <% end %>

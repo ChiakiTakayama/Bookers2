@@ -1,6 +1,8 @@
 <div><!--12章で作成-->
 <!--投稿フォーム-->
+<!--< %= render 'users/user-info', users: @users %>user infoの部分テンプレはエラー-->
 <%= render 'new', books: @books %>
+<h2>本の詳細</h2>
 
   <p>Title:<%= @book.title %></p>
   <p>Opinion:<%= @book.body %></p>
