@@ -1,6 +1,14 @@
 <h1>ユーザー一覧</h1>
 <%= render 'books/new', books: @books %>
 <!--< %= render 'user-info', users: @users %>user infoの部分テンプレはエラー-->
+<!--< % if @list.errors.any? %>-->
+<!--  < %= @list.errors.count %>件のエラーが発生しました-->
+<!--  <ul>-->
+<!--    < % @list.errors.full_messages.each do |message| %>-->
+<!--      <li>< %= message %></li>-->
+<!--    < % end %>-->
+<!--  </ul>-->
+<!--< % end %>-->
 <% @users.each do |user| %>
 <!--投稿フォームを部分テンプレートで作成-->
  <div>

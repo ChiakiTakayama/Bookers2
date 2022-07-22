@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   # サインインしたらユーザーページに飛ぶようにする
- 
+
  def new
     @book = Book.new
  end
@@ -8,9 +8,12 @@ class BooksController < ApplicationController
 
 def create
     @book = Book.new(book_params)
-    @book.user_id = current_user.id
-    @book.save
-    redirect_to books_path
+    if @book.save
+      redirect_to book_path(@book.id)
+    else
+      @books = Book.all
+      render :index
+    end
 end
 # 10章を元に作成
 def index
