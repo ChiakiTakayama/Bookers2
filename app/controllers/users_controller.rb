@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @books = @user.books
+
   end
 
   def edit
@@ -17,6 +18,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @user = current_user
   end
   # アプリケーションを完成させよう1の3章を元に
   # user一覧を作成する

@@ -1,7 +1,8 @@
 <div>
+  <%= render 'user-info', user: @user %>
   <!--投稿フォーム-->
   <%= render 'books/new', books: @books %>
-  <!--<h3>< %= @user.name %></h3>-->
+
   <h2>ユーザーページ</h2>
   <%= image_tag @user.get_profile_image(100,100) %>
 
