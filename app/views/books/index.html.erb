@@ -1,12 +1,10 @@
  <% @books.each do |book| %>
-<div>
-
-<!--12章で追加。-->
+ 
 <%= render 'users/user-info', user: @user %>
 <%= render 'new', books: @books %>
+
+<div>
 <h2>投稿一覧</h2>
-
-
   <p>投稿ユーザー画像：<%= image_tag 'no_image.jpeg' %></p>
   <!--<p>投稿ユーザー画像：< %= image_tag @book.user.get_profile_image(100,100) %></p>-->
   <!--17章を元に変更しようとしたらshowの方でNameErrprが-->
