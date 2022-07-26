@@ -14,7 +14,7 @@ def create
     else
       @books = Book.all
       @user = current_user #/books/indexのusers/user-infoでuser :@userの設定がされているのに
-    #   コントローラーでこの記述がないからNoMethodErrorが
+    #   コントローラーでこの記述がないからNoMethodErrorが出た
       render :index
     end
 end
@@ -33,6 +33,18 @@ def show
  @book = Book.new
 end
 # 11章でログイン後の遷移より先に12章を元に記述
+
+def edit
+    # 最後まで作り忘れてた／(^p^)＼
+    @book = Book.find(params[:id])
+end
+
+def update
+    # 最後まで作り忘れてた
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to book_path(book.id)
+end
 
 def destroy
  @book = Book.find(params[:id])

@@ -1,0 +1,15 @@
+<h1>Editing Book</h1>
+<!--最後まで作り忘れてた-->
+
+<%= form_with model: @book do |f| %>
+
+    <h4>Title</h4>
+      <%= f.text_field :title %>
+
+    <h4>Opinion</h4>
+      <%= f.text_area :body %>
+
+    <%= f.submit 'Update Book' %>
+  <% end %>
+
+<p>Show</p><p>|</p><p>Destroy</p>

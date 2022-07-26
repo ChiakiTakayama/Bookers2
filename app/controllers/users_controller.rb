@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @books = @user.books
-    @book = Book.new
+    @book = Book.new#途中で誤って消してしまった。githubを参考に記述した。
   end
 
   def edit
