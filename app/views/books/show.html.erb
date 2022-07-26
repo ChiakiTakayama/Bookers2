@@ -4,9 +4,10 @@
 <h2>本の詳細</h2>
 </div>
 <div>
+  <p>投稿ユーザー画像：<%=image_tag 'no_image.jpg' %></p>
   <p>Title:<%= @bookfind.title %></p>
   <p>Opinion:<%= @bookfind.body %></p>
-  <p>投稿ユーザー画像：<%=image_tag 'no_image.jpg' %></p>
+  <%= link_to "編集", edit_book_path(@bookfind.id) %>
   <!--<p>投稿ユーザー画像：< %= image_tag @book.user.get_profile_image(100,100) %></p>-->
   <!--17章を元にNameErrorが出る-->
   <p>ユーザーネーム：<%= @bookfind.user.name %></p>
