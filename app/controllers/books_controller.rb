@@ -7,16 +7,16 @@ class BooksController < ApplicationController
 # 10章を元に作成
 
 def create
-    @book = Book.new(book_params)
-    @book.user_id = current_user.id
-    if @book.save
-      redirect_to book_path(@book.id)
-    else
-      @books = Book.all
-      @user = current_user #/books/indexのusers/user-infoでuser :@userの設定がされているのに
+ @book = Book.new(book_params)
+ @book.user_id = current_user.id
+  if @book.save
+   redirect_to book_path(@book.id)
+  else
+   @books = Book.all
+   @user = current_user #/books/indexのusers/user-infoでuser :@userの設定がされているのに
     #   コントローラーでこの記述がないからNoMethodErrorが出た
-      render :index
-    end
+   render :index
+  end
 end
 # 10章を元に作成
 
@@ -35,15 +35,17 @@ end
 # 11章でログイン後の遷移より先に12章を元に記述
 
 def edit
-    # 最後まで作り忘れてた／(^p^)＼
     @book = Book.find(params[:id])
+
 end
 
 def update
-    # 最後まで作り忘れてた
-    book = Book.find(params[:id])
-    book.update(book_params)
-    redirect_to book_path(book.id)
+  book = Book.find(params[:id])
+ if book.update(book_params)
+  redirect_to book_path(book.id)
+ else
+  render :edit
+ end
 end
 
 def destroy
