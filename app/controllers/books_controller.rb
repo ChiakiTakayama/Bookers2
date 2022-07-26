@@ -13,6 +13,8 @@ def create
       redirect_to book_path(@book.id)
     else
       @books = Book.all
+      @user = current_user #/books/indexのusers/user-infoでuser :@userの設定がされているのに
+    #   コントローラーでこの記述がないからNoMethodErrorが
       render :index
     end
 end

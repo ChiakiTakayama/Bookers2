@@ -1,16 +1,9 @@
 <div>
   <%= render 'user-info', user: @user %>
   <%= render 'books/new', books: @book %>
-
-  <h2>ユーザーページ</h2>
-  <!--< %= image_tag @user.get_profile_image(100,100) %>-->
-
-  <!--< % if @user.id == current_user.id %>-->
-   <!--<p>< %= link_to "プロフィール編集", edit_user_path(@user) %></p>-->
-  <!--編集画面へのリンクは16章が元になっている-->
-  <!--< % end %>-->
 </div>
 
+  <h2>ユーザーページ</h2>
 
 <% @books.each do |book| %>
 <div>

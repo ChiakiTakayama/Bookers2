@@ -1,15 +1,8 @@
 <h1>ユーザー一覧</h1>
+
 <%= render 'user-info', user: @user %>
 <%= render 'books/new', books: @book %>
 
-<!--< % if @list.errors.any? %>-->
-<!--  < %= @list.errors.count %>件のエラーが発生しました-->
-<!--  <ul>-->
-<!--    < % @list.errors.full_messages.each do |message| %>-->
-<!--      <li>< %= message %></li>-->
-<!--    < % end %>-->
-<!--  </ul>-->
-<!--< % end %>-->
 <% @users.each do |user| %>
  <div>
    <p>投稿ユーザー画像：<%= image_tag 'no_image.jpeg' %></p>
