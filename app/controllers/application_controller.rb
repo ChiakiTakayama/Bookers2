@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
 # サインインしたらユーザーページに飛ぶようにする
 
   def after_sign_in_path_for(resource)
-    about_path
-    # users_path   books_pathにしてみたらうまく行ったのでもう少しユーザーページを見るべき
+    # about_path
+    users_path   #books_pathにしてみたらうまく行ったのでもう少しユーザーページを見るべき
   end
 # サインアウトしたらトップページに飛ぶようにする
   def after_sign_out_path_for(resource)
@@ -17,4 +17,10 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
+  
+  # private
+  
+  # def configure_permitted_parameters
+  #   devise_parameter_sanitizer.permit(:sign_up,keys:[:name])
+  # end
 end

@@ -47,6 +47,7 @@ def update
   render :edit
  end
 end
+# 更新の際のバリデーションはupdateで記述する
 
 def destroy
  @book = Book.find(params[:id])
