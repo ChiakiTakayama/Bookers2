@@ -16,14 +16,18 @@
      <%= form_with model: @book do |f| %>
      <div class="form-group">
       <label for="book_title">Title</label>
-      <%= f.text_field :title %>
+      <!--<%= f.text_field :title %>-->
+      <input class="form-control book_title" type="text" value="" name="book[title]" id="book_title" />
+     <!--↑デベロッパーツールを元にvalueを未記入で書き換えた-->
      </div>
      <div class="form-group">
       <label for="book-opinion">Opinion</label>
       <%= f.text_area :body %>
-     </div>
+      </div>
      <div class="form-group">
       <%= f.submit 'Update Book' %>
+      <!--アップデートボタンの色変えはカリキュラムにありそう-->
+      
      </div>
     <% end %>
     <%= link_to 'Show', book_path %>
