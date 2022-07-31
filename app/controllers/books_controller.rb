@@ -24,6 +24,7 @@ def index
   @books = Book.all
   @user = current_user
   @book =  Book.new
+  # @bookfind = Book.find(params[:id])
 end
 # 11章を元に記述。
 # strongパラメーターより先に記述しないとエラーが出る

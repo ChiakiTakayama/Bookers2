@@ -1,4 +1,9 @@
- <% @books.each do |book| %>
+<main>
+  <p id="notice"></p>
+  <div class='container px-5 px-0'>
+    <div class='row'>
+      <div class='col-md-3'>
+<% @books.each do |book| %>
  <% if @book.errors.any? %>
   <%= @book.errors.count %>件のエラーが発生しました
   <ul>
@@ -9,19 +14,32 @@
 <% end %>
 
 <div>
-<%= render 'users/user-info', user: @user %>
-<%= render 'new', books: @books %>
+ <%= render 'users/user-info', user: @user %>
+ <!--< %= render 'new', book: @book %>-->
+ <%= render 'new', books: @book %>
+</div>
 </div>
 
-<div>
-<h2>投稿一覧</h2>
-  <p>投稿ユーザー画像：<%= image_tag 'no_image.jpeg' %></p>
-  <!--<p>投稿ユーザー画像：< %= image_tag @book.user.get_profile_image(100,100) %></p>-->
-  <!--17章を元に変更しようとしたらshowの方でNameErrprが-->
-   <%= link_to book_path(book.id) do %>
-  <p>Title : <%= book.title %></p>
-  <% end %>
-  <p>Opinion : <%= book.body %></p>
+<div class='col-8 offset-md-1'>
+ <h2>Books</h2>
+ <table class='table table-hover table-inverse'>
+   <thead>
+     <tr>
+       <th>Title</th>
+       <th>Opinion</th>
+       <th colspan="3"></th>
+     </tr>
+    </thead>
+  <tbody>
+    <tr>
+     <td><%= image_tag 'no_image.jpeg' %>
+     <%= link_to book_path(book.id) do %></td>
+     <td>Title:<!--< %= @bookfind.title %>--></td>
+     <td>Opinion :<!-- < %= book.body %>--></td>
+     <% end %>
+    </tr>
+  </tbody>
+ </table>
 </div>
 <% end %>
-<!--11章を元に追加-->
+</main>

@@ -1,20 +1,27 @@
-<div><!--12章で作成-->
-<%= render 'users/user-info', user: @user %>
-<%= render 'new', books: @book %>
-<h2>本の詳細</h2>
-</div>
-<div>
-  <p>投稿ユーザー画像：<%=image_tag 'no_image.jpg' %></p>
-  <p>Title:<%= @bookfind.title %></p>
-  <p>Opinion:<%= @bookfind.body %></p>
-  <%= link_to "編集", edit_book_path(@bookfind.id) %>
-  <!--<p>投稿ユーザー画像：< %= image_tag @book.user.get_profile_image(100,100) %></p>-->
-  <!--17章を元にNameErrorが出る-->
-  <p>ユーザーネーム：<%= @bookfind.user.name %></p>
-  <p>投稿日：<%= @bookfind.created_at.strftime('%Y/%m/%d') %></p>
-  <!--投稿日は必要なし-->
-  <% if @bookfind.user == current_user %>
-   <%= link_to "削除", book_path(@bookfind), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-  <% end %>
-   <!--削除は13章を元に記述。遷移先はこのままで-->
-</div>
+<main>
+ <p id="notice"></p>
+ <div class='container px-5 px-sm-0'>
+  <div class='row'>
+   <div class='col-md-3'>
+<!--<div>12章で作成-->
+    <%= render 'users/user-info', user: @user %>
+     <%= render 'new', books: @book %>
+      <div class='col-md-8 offset-md-1'>
+       <h2>Books</h2>
+       <table class='table'>
+        <tr>
+         <td>投稿ユーザー画像：<%=image_tag 'no_image.jpg' %></td>
+         <td>Title:<%= @bookfind.title %></td>
+         <!--<td>Opinion:< %= @bookfind.body %></td>-->
+         <td><%= link_to "編集", edit_book_path(@bookfind.id) %></td>
+         <td>ユーザーネーム：<%= @bookfind.user.name %></td>
+         <% if @bookfind.user == current_user %>
+         <%= link_to "削除", book_path(@bookfind), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+         <% end %>
+        </tr>
+       </table>
+      </div>
+   </div>
+  </div>
+ </div>
+</main>
