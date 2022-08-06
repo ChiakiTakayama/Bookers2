@@ -1,11 +1,9 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!, except: [:top]
   before_action :configure_permitted_parameters, if: :devise_controller?
-# サインインしたらユーザーページに飛ぶようにする
-
+  
   def after_sign_in_path_for(resource)
-    # about_path
-    users_path   #books_pathにしてみたらうまく行ったのでもう少しユーザーページを見るべき
+    user_path(current_user.id)   
   end
 # サインアウトしたらトップページに飛ぶようにする
   def after_sign_out_path_for(resource)

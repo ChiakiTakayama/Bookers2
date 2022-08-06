@@ -3,14 +3,21 @@
  <div class='container px-5 px-sm-0'>
   <div class='row'>
    <div class='col-md-3'>
-<!--<div>12章で作成-->
     <%= render 'users/user-info', user: @user %>
      <%= render 'new', books: @book %>
       <div class='col-md-8 offset-md-1'>
        <h2>Books</h2>
+
        <table class='table'>
         <tr>
-         <td>投稿ユーザー画像：<%=image_tag 'no_image.jpg' %></td>
+         <!--ここから-->
+         <td>投稿ユーザー画像：<%= link_to (@book.user_id) do %>
+         <%=attachment_image_tag @book.user_id, :fill, 50, 50, fallbach:'no_image.jpg',size:'50x50' %>
+         <br>
+         <!--ここら辺りでエラー-->
+         <%= @book.user.name %>
+         <% end %>
+         </td>
          <td>Title:<%= @bookfind.title %></td>
          <!--<td>Opinion:< %= @bookfind.body %></td>-->
          <td><%= link_to "編集", edit_book_path(@bookfind.id) %></td>

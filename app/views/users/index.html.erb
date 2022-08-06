@@ -1,13 +1,37 @@
-<h1>ユーザー一覧</h1>
+<main>
+ <p id="notice"></p>
+ <div class="container px-5 px-sm-0">
+   <div class="row">
+    <div class="col-md-3">
+     <%= render 'user-info', user: @user %>
+     <%= render 'books/new', books: @book %>
+    </div>
+    
+    <div class="col-md-8 offset-md-1">
+     <h2>ユーザー一覧</h2>
+     <table class="table">
+      <thead>
+       <tr>
+        <th>image</th>
+        <th>name</th>
+        <th colspan="3"></th>
+       </tr>
+      </thead>
 
-<%= render 'user-info', user: @user %>
-<%= render 'books/new', books: @book %>
-
-<% @users.each do |user| %>
- <div>
-   <p>投稿ユーザー画像：<%= image_tag 'no_image.jpeg' %></p>
-   <%= link_to user_path(user.id) do %>
-    <p>ユーザーネーム：<%= user.name %></p>
+      <% @users.each do |user| %>
+       <tbody>
+        <tr>
+         <td><%= image_tag 'no_image.jpeg' %>
+         <%= link_to user_path(user.id) do %>
+         </td>
+         <td>ユーザーネーム：<%= user.name %></td>
+         <td>Show</td>
+         <% end %>
+        </tr>
+       </tbody>
    <% end %>
- </div>
-<% end %>
+ </table>
+</div>
+</div>
+</div>
+</main>

@@ -2,17 +2,23 @@ class UsersController < ApplicationController
   # 15章を元に記述
   def show
     @user = User.find(params[:id])
-    @books = @user.books
     @book = Book.new#途中で誤って消してしまった。githubを参考に記述した。
+    @books = @user.books
   end
 
   def edit
     @user = User.find(params[:id])
+    # if @user == current_user
+    #     render "edit"
+    # else
+    #   redirect_to user_path(current_user)
+    # end
   end
 
   def update
    @user = User.find(params[:id])
    if @user.update(user_params)
+    # flash[:notice]="You have updated user successfully."
     redirect_to user_path(@user.id)
    else
      render :edit
@@ -20,9 +26,10 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
     @user = current_user
+    @users = User.all
     @book = Book.new
+    # @books = Book.all
   end
   # アプリケーションを完成させよう1の3章を元に
   # user一覧を作成する

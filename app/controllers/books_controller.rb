@@ -13,8 +13,7 @@ def create
    redirect_to book_path(@book.id)
   else
    @books = Book.all
-   @user = current_user #/books/indexのusers/user-infoでuser :@userの設定がされているのに
-    #   コントローラーでこの記述がないからNoMethodErrorが出た
+   @user = current_user 
    render :index
   end
 end
@@ -26,12 +25,12 @@ def index
   @book =  Book.new
   # @bookfind = Book.find(params[:id])
 end
-# 11章を元に記述。
-# strongパラメーターより先に記述しないとエラーが出る
+
 def show
  @bookfind = Book.find(params[:id])
  @user = @bookfind.user
  @book = Book.new
+ @book.user_id = current_user.id
 end
 # 11章でログイン後の遷移より先に12章を元に記述
 
