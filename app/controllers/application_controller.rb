@@ -12,10 +12,8 @@ class ApplicationController < ActionController::Base
 
   protected
 
-
-  # private
-
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email,:name])
   end
+  # ↑:nameと:emailはまとめて記述する
 end

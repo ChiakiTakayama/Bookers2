@@ -6,7 +6,7 @@
         <%= render 'user-info', user: @user %>
         <%= render 'books/new', books: @book %>
       </div>
-      
+
      <div class='col-md-8 offset-md-1'>
        <h2>Books</h2>
        <table class='table table-hover table-inverse'>
@@ -30,6 +30,7 @@
                      <% end %>
                      </td>
                      <td>Opinion：<%= book.body %></td>
+
 
                  </tbody>
              <% end %>
