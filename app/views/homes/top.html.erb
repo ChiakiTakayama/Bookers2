@@ -1,6 +1,9 @@
 
 <main>
 <script src="https://kit.fontawesome.com/6df42682e8.js" crossorigin="anonymous"></script>
+<% flash.each do |key, value| %>
+    <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
 <p id="notice"></p>
 
 <div class="container">
