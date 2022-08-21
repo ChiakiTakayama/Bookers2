@@ -15,18 +15,22 @@
     <table class='table'>
      <tbody>
       <tr>
+        
         <td><%= link_to user_path(@book.user_id) do %>
          <%= image_tag @book.user.get_profile_image(100,100) %>
          <br>
          <%= @book.user.name %>
          <% end %>
         </td>
+        
         <td><%= link_to @bookfind.title %></td>
+        
         <td><% if @bookfind.user == current_user %>
          <%= link_to "edit", edit_book_path(@bookfind.id), class:"btn-sm btn-success" %>
          <% end %>
          </td>
-        <td><% if @bookfind.user == current_user %>
+         
+         <td><% if @bookfind.user == current_user %>
          <%= link_to "destroy", book_path(@bookfind), class:"btn-sm btn-danger destroy(@bookfind)",method: :delete, "data-confirm" => "本当に削除しますか？" %>
          <% end %>
         </td>

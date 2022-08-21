@@ -6,6 +6,7 @@
 　  <tr>
 　    <th>name</th>
 　    <span class ="glyphicon glyphicon-home" aria-hidden="true"> Home</span>
+　    <!--多分、Home表示でエラーが出てる-->
 　    <th><%= user.name %></th>
 　  </tr>
 　  <tr>
@@ -14,8 +15,8 @@
 　  </tr>
 　</table>
 　<div class = "row">
-　  <a class="btn btn-outline-secondary" <%= link_to "プロフィール編集", edit_user_path(user) %>
-　   <!--<i class="fas fa-user-cog"></i>-->
-　  </a>
+　  <%= link_to edit_user_path(user), class:"btn btn-outline-secondary" do %>
+　    <i class="fa-solid fa-user-gear"></i>
+　    <% end %>
 　  </div>
 
