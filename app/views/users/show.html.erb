@@ -13,7 +13,7 @@
      <div class='col-md-8 offset-md-1'>
        <h2>Books</h2>
        <table class='table table-hover table-inverse'>
-           
+
            <thead>
                  <tr>
                  <th></th>
@@ -25,14 +25,15 @@
 
              <% @books.each do |book| %>
                  <tbody>
-                   <td><a href><%= image_tag book.user.get_profile_image(100,100) %>
-                     <%= link_to book_path(book.id) do %>
+                   <td>
+                     <%= link_to user_path(@user.id) do %>
+                     <%= image_tag book.user.get_profile_image(100,100) %>
                      <% end %>
                      </td>
                      <td><%= link_to book.title, book_path(book.id) %></td>
-                     <td>Opinion：<%= book.body %></td>
+                     <td><%= book.body %></td>
                  </tbody>
-                 
+
              <% end %>
            </table>
      </div>
