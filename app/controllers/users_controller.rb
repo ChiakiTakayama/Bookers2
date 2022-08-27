@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # 15章を元に記述
   def show
     @user = User.find(params[:id])
-    @book = Book.new#途中で誤って消してしまった。githubを参考に記述した。
+    @book = Book.new
     @books = @user.books
   end
 
@@ -29,12 +29,9 @@ class UsersController < ApplicationController
     @user = current_user
     @users = User.all
     @book = Book.new
-    # @books = Book.all
   end
-  # アプリケーションを完成させよう1の3章を元に
-  # user一覧を作成する
-  # ルーティングはほぼおkっぽいからあとはユーザー画像、Showへのリンク作成
-
+  # アプリケーションを完成させよう1の3章を元にuser一覧を作成する
+  
   private
   def user_params
     params.require(:user).permit(:name, :profile_image,:introduction)

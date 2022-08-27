@@ -24,7 +24,6 @@ def index
   @books = Book.all
   @user = current_user
   @book =  Book.new
-  # @bookfind = Book.find(params[:id])
 end
 
 def show
@@ -61,6 +60,7 @@ def destroy
  redirect_to '/books'
 end
 # 13章を元に記述
+
  private
 
  def book_params
